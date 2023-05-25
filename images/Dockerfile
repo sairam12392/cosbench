@@ -12,8 +12,8 @@ ENV COSBENCH_DIR="${HOME_DIR}/cosbench"
 RUN apt-get update ; apt-get install -y curl crudini
 RUN curl --retry 6 \
     -Ls "https://github.com/intel-cloud/cosbench/releases/download/v${COSBENCH_VERSION}/${COSBENCH_VERSION}.zip" > /tmp/cosbench.zip && \
-    -Ls "https://github.com/sairam12392/cosbench/blob/master/cosbench-start.sh" > /tmp/cosbench-start.sh && \
-    cd /tmp ; unzip -q /tmp/cosbench.zip ; rm "/tmp/${COSBENCH_VERSION}/cosbench-start.sh" ; mv /tmp/cosbench-start.sh "/tmp/${COSBENCH_VERSION}"  && \
+    -Ls "https://github.com/sairam12392/cosbench/raw/master/start-controller.zip" > /tmp/start-controller.zip && \
+    cd /tmp ; unzip -q /tmp/cosbench.zip ; unzip -q /tmp/start-controller.zip ; rm "/tmp/${COSBENCH_VERSION}/cosbench-start.sh" ; mv /tmp/cosbench-start.sh "/tmp/${COSBENCH_VERSION}"  && \
     mv "/tmp/${COSBENCH_VERSION}" ${COSBENCH_DIR} && \
     rm /tmp/cosbench.zip
 
