@@ -14,4 +14,4 @@ docker build \
         --build-arg "VERSION=${VERSION}" \
         .
 
-echo "Built cosbench:${VERSION}"
+echo "Built md5disable-cosbench:${VERSION}"
