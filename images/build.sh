@@ -7,11 +7,11 @@ VCS_REF=$(git rev-parse --verify HEAD)
 VERSION=0.0.6
 
 docker build \
-        -t "zenko/zenko-cosbench:${VERSION}" \
+        -t "sairam12392/cosbench:${VERSION}" \
         --build-arg "COSBENCH_VERSION=${COSBENCH_VERSION}" \
         --build-arg "BUILD_DATE=${BUILD_DATE}" \
         --build-arg "VCS_REF=${VCS_REF}" \
         --build-arg "VERSION=${VERSION}" \
         .
 
-echo "Built zenko-cosbench:${VERSION}"
+echo "Built cosbench:${VERSION}"
